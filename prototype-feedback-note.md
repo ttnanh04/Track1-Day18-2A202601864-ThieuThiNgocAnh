@@ -1,32 +1,40 @@
-# Prototype Feedback Note — Phiên do Thiều Thị Ngọc Ánh Facilitate
+# Ghi chép phản hồi phỏng vấn thử nghiệm Prototype
 
-## 1. Thông Tin Phiên Test
-
-- **Người facilitate:** Thiều Thị Ngọc Ánh — MSV: `2A202601864`
-- **Mã Tester / Bối cảnh:** `2A202601818` (Sinh viên ngành CNTT, có ghi chú môn chuyên ngành trên Notion, từng gặp rắc rối vì ghi chú lộn xộn và thiếu bối cảnh khi ôn thi giữa kỳ).
-- **Ngày thực hiện:** 18/08/2026
-- **Công cụ test:** Prototype web tương tác A/B/C (`day18/prototype/index.html`).
+> **Case nghiên cứu:** Case B — AI Notes: Ghi chú học tập cá nhân  
+> **Mục tiêu:** Ghi nhận thực tế hành vi, nhận xét và các quyết định tương tác Người – AI của học viên thử nghiệm qua các phiên phỏng vấn do các thành viên trong nhóm trực tiếp dẫn dắt (Facilitate).
 
 ---
 
-## 2. Ghi Nhận Quan Sát (Prototype Feedback Note)
+## 1. Chi tiết phản hồi thử nghiệm theo từng phiên Facilitator
 
-| Tiêu chí quan sát | Ghi chép chi tiết (Note) |
-| :--- | :--- |
-| **First action (Hành động đầu tiên)** | - **Option A:** Click trực tiếp vào từ khóa màu đỏ `overshoot`.<br>- **Option B:** Đọc tiêu đề nhãn gợi ý 1 (`🏷️ Overshoot là gì?`).<br>- **Option C:** Đọc lướt qua đoạn văn bản trong Synthesis Card. |
-| **Chỗ dừng, do dự hoặc hiểu sai** | Ở Option A, tester đứng ngập ngừng khoảng 5 giây không rõ nên bôi đen từ khóa hay phải bấm nút "🔍 Trích xuất Context" trước. Sau đó mới nhận ra mẹo nhắc ở bên dưới. |
-| **Evidence được đọc hay bỏ qua** | Đọc rất kỹ đoạn citation ở Option A và C (so sánh nội dung trích dẫn từ `Slide 14 · Lecture 3` với tài liệu gốc môn học). Tester nhấn mạnh cần số trang/slide rõ ràng để tin tưởng. |
-| **Cách tester sửa hoặc lấy lại control** | - Ở Option B: Thích nút "✏️ Sửa" để tự đổi tiêu đề nhãn theo cách hiểu cá nhân trước khi ghim.<br>- Ở Option C: Tester chọn bấm nút "✏️ Sửa nội dung Card" trước khi bấm "Accept". |
-| **Option được chọn** | **Option B (Co-Create)** |
-| **Lý do và trade-off** | *"Mình thích AI đề xuất sẵn tag vì mình không phải nghĩ câu hỏi (như A), nhưng mình muốn tự bấm duyệt tag để note không bị quá dài hoặc bị đè chữ rác (như C)."* |
-| **Evidence chống lại kỳ vọng của nhóm** | Nhóm từng nghĩ Option C (tự động 100%) sẽ được chọn vì nhanh nhất, nhưng tester phản hồi rằng Option C gây cảm giác bị AI "choợp ngợp" và cướp mất không gian note cá nhân. |
+- **Option A — Người học tự tìm kiếm:** Tester bấm tìm kiếm trích dẫn nhanh chóng nhưng cảm thấy chưa thực sự giải quyết được khó khăn khi ghi chú quá ngắn.
+- **Option B — Người học & AI cùng tạo:** Tester đọc kỹ từng ô bản nháp, soi lại link slide bài giảng gốc và chủ động chỉnh sửa lại 1 câu giải thích trước khi bấm duyệt (`Approve`).
+- **Option C — AI đề xuất & Nhờ người hỗ trợ:** Tester thích sự kết hợp giữa Option B và Option C để AI vừa giúp gợi ý bản nháp vừa giúp dọn dẹp các ghi chú lộn xộn.
+- **Nhận xét trực tiếp:** _"Có sẵn bản nháp tóm tắt thế này tiện hơn nhiều, nhưng bắt buộc phải cho mình sửa và kiểm tra link gốc chứ AI tự lưu luôn thì không yên tâm."_
 
 ---
 
-## 3. Đánh Giá Cá Nhân Sau Phiên Facilitate
+## 2. Bốn nhóm quyết định tương tác Người – AI (Human–AI Decisions)
 
-1. **Điều làm tốt:**  
-   Tuân thủ nghiêm ngặt luật facilitation: không hướng dẫn nút bấm, không trả lời thay khi tester hỏi *"Cái này bấm vào đâu?"* mà hỏi ngược lại *"Theo bạn, nó nên hoạt động thế nào?"*.
+### 1. Kỳ vọng ban đầu đối với người dùng (Expectation)
+- Trước khi thực hiện, người dẫn phỏng vấn giải thích rõ giới hạn: AI chỉ đóng vai trò hỗ trợ gợi ý từ bộ tài liệu bài học mẫu, học viên cần tự kiểm tra lại nguồn trích dẫn trước khi sử dụng.
 
-2. **Bài học rút ra:**  
-   Ghi chú cá nhân là không gian riêng tư cực kỳ nhạy cảm của người học. Người học không muốn AI tự động chèn cả một khối văn bản dài (Card) mà chưa được sự đồng ý.
+### 2. Phân chia vai trò giữa Người và AI (Role & Agency)
+- **AI thực hiện:** Tìm kiếm trích dẫn bài giảng, tạo bản nháp thẻ bối cảnh 3 dòng, đánh dấu các phần thông tin chưa chắc chắn.
+- **Học viên thực hiện:** Đọc trích dẫn, chỉnh sửa bản nháp, bấm duyệt (`Approve`) hoặc từ chối (`Reject`).
+- **Nguyên tắc can thiệp:** AI tuyệt đối không tự động lưu nội dung khi chưa có sự xác nhận của học viên.
+
+### 3. Minh bạch nguồn tin & Mức độ tin cậy (Evidence & Uncertainty)
+- Luôn hiển thị nguồn trích dẫn trực tiếp (`Slide 14, phút 18:22`) bên cạnh các câu giải thích của AI.
+- Gắn nhãn phân loại minh bạch 3 trạng thái: `Đã tìm thấy (Found)`, `AI suy đoán (Inferred)` và `Chưa rõ (Unknown)`.
+
+### 4. Quyền kiểm soát của người dùng (Control & Recovery)
+- Cung cấp đầy đủ các nút chức năng: `Xem lại`, `Chỉnh sửa`, `Bỏ qua`, `Hủy gửi` và `Reset về trạng thái ban đầu`.
+- Cho phép học viên tự quay lại làm bài theo cách truyền thống bất kỳ lúc nào nếu AI đưa ra thông tin không chính xác.
+
+---
+
+## 3. Tổng kết quyết định & Định hướng nhóm chốt
+
+- **Điểm chung của cả 3 tester:** Đều coi trọng tính minh bạch của trích dẫn bài giảng gốc và yêu cầu con người bắt buộc phải có bước duyệt (`Approve`) trước khi lưu.
+- **Định hướng nhóm chốt (Hybrid Solution):** Tự động tạo bản nháp giải thích kèm link bài giảng gốc (Option B), đồng thời tích hợp ô tìm kiếm trích dẫn nhanh (Option A). Mọi nội dung do AI gợi ý đều bắt buộc qua bước học viên xem và bấm duyệt mới được lưu lại.

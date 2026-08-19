@@ -1,68 +1,74 @@
-# Track 1 — Day 18 — Personal Learning Notes (Case B)
+# Track 1 — Day 18: Solution Exploration and Validation
+## 1. Thông tin cá nhân và nhóm
 
-### Thành viên nhóm
-1. **Thiều Thị Ngọc Ánh** — `2A202601864` 
-2. **Trần Thanh Huyền** — `2A202601578`
-3. **Đỗ Tú Anh** — `2A202601272`
-
----
-
-## 2. Hypothesis Problem (Bản Nhóm Dùng Trong Day 18)
-
-> Khi **quay lại các ghi chú cá nhân (Notion, ảnh chụp slide) sau một khoảng thời gian để ôn tập hoặc làm assignment**, **người học cá nhân (sinh viên)** gặp khó khăn trong việc **hiểu và nối lại bối cảnh (context) của thông tin đã ghi để áp dụng kiến thức ngay** vì **ghi chú chỉ lưu dạng từ khóa/công thức rải rác mà không đính kèm bối cảnh gốc hoặc mối liên hệ giữa các ý**, dẫn đến **mất gấp đôi thời gian đọc lại slide/video cũ hoặc nản lòng bỏ qua không ôn tập nữa**.
-
----
-
-## 3. Three Solution Options & Prototype Links
-
-### 📋 Thiết Kế Ba Phương Án (Design Sheet)
-Xem chi tiết Design Sheet & Human-AI Decision Table tại: [three-option-design-sheet.md](three-option-design-sheet.md)
-
-| Phương án | Cơ chế tương tác Human–AI | Mô tả ngắn |
-| :--- | :--- | :--- |
-| **Option A** | **User-Led (On-Demand Query)** | User chọn/bôi đen từ khóa chưa hiểu, AI trích xuất exact paragraph & slide gốc liên quan để user đọc và đính kèm. |
-| **Option B** | **Co-Create (Draft Tags)** | AI chủ động phân tích và đề xuất 2–3 nhãn bối cảnh nháp (Context Draft Tags). User bấm *Duyệt & Ghim*, *Sửa* hoặc *Ẩn* tag. |
-| **Option C** | **AI-Led (Synthesis Card)** | AI tự động sinh 1 thẻ tổng hợp bối cảnh diện rộng (Synthesis Card) đính dưới note. User bấm *Chấp nhận*, *Sửa* hoặc *Dismiss*. |
-
-### 🔗 Link Micro-prototypes
-- **Link truy cập Prototype A/B/C trực tiếp:** [prototype/index.html](prototype/index.html) (xem hướng dẫn tại [prototype-link.md](prototype-link.md))
+- **Họ và tên:** Thiều Thị Ngọc Ánh
+- **Mã học viên (MSHV):** `2A22601864`
+- **Tên nhóm:** Nhóm 68
+- **Case đăng ký:** Case B — AI Notes: Personal Learning Notes
+- **Ba thành viên trong nhóm:**
+  1. **Đỗ Tú Anh** — MSHV: `2A202601272` 
+  2. **Thiều Thị Ngọc Ánh** — MSHV: `2A22601864` 
+  3. **Trần Thanh Huyền** — MSHV: `2A202601578` 
 
 ---
 
-## 4. Đóng Góp Của Tôi Trong Nhóm (Thiều Thị Ngọc Ánh — 2A202601864)
+## 2. Hypothesis Problem (Bản nhóm dùng trong Day 18)
 
-Trong bài làm Day 18, tôi đã thực hiện các phần đóng góp cụ thể sau:
-1. **Thiết kế & Xây dựng Option A & Common Context Fixture:** Xây dựng tình huống học tập chung (môn Machine Learning, ghi chú Gradient Descent & Learning Rate đính kèm Slide 14) và cơ chế On-Demand Query cho Option A.
-2. **Xây dựng Prototype Web:** Cùng nhóm code giao diện HTML/CSS/JS cho bộ 3 micro-prototypes có nút Reset path và Facilitator Annotation Panel.
-3. **Facilitate Phiên Test Cá Nhân:** Trực tiếp dẫn dắt phiên test thực tế với **Tester 1 (Mã SV: `2A202601818`)**, quan sát hành vi, ghi nhận hesitation, cách lấy lại quyền kiểm soát và lựa chọn option.
-4. **Tham gia Tổng hợp Feedback Nhóm:** Phân tích ma trận 4 lớp (OBSERVED, INTERPRETED, DECIDED - NEXT CHANGE, STILL UNPROVEN) và chốt quyết định 1 Group Next Change.
+> **Khi quay lại ôn bài hoặc làm bài tập sau một khoảng thời gian, học viên gặp khó khăn trong việc xem và hiểu lại kiến thức cũ vì các ghi chú nằm rải rác ở nhiều nơi, lộn xộn và bị thiếu bối cảnh giải thích, dẫn đến việc phải tốn thêm nhiều thời gian đọc lại bài giảng từ đầu hoặc nản lòng bỏ qua không ôn bài nữa khiến bị hổng kiến thức.**
 
 ---
 
-## 5. Prototype Feedback & Group Synthesis
+## 3. Three Solution Options & Link Prototype
 
-### 📑 Phiên Facilitate Cá Nhân (Feedback Note 1)
-Xem bản đầy đủ tại: [prototype-feedback-note.md](prototype-feedback-note.md)
-- **Tester:** `2A202601818` (Sinh viên CNTT)
-- **Observation chính:** Tester lúng túng 5 giây ở Option A vì không rõ nên bôi đen hay bấm nút trước. Tester đọc rất kỹ đoạn trích dẫn nguồn Slide 14. Ở Option C, tester cảm thấy ngợp vì thẻ chữ AI quá to.
-- **Lựa chọn:** Tester chọn **Option B (Co-create)** vì vừa được AI nghĩ hộ nhãn vừa được tự tay bấm duyệt tag để giữ sạch note.
+| Option | Mô tả ngắn cách giải | Hướng phân chia công việc (Spectrum) | Link Prototype |
+| :--- | :--- | :--- | :--- |
+| **Option A — User-Led Retrieval** | AI trợ giúp tìm kiếm và trích dẫn chính xác đoạn bài giảng/slide liên quan; người học tự đọc trích dẫn và tổng hợp câu trả lời. | _Người học tự làm chủ / AI tìm trích dẫn_ | [`Prototype1/index.html`](Prototype1/index.html) |
+| **Option B — User + AI Co-Create** | AI tự động tạo bản nháp thẻ bối cảnh 3 dòng từ ghi chú và slide; người học xem qua, chỉnh sửa hoặc xác nhận trước khi lưu. | _Người học + AI cùng tạo / Người học duyệt_ | [`Prototype2/index.html`](Prototype2/index.html) |
+| **Option C — AI Initiates, User Reviews** | AI tự phân tích độ đầy đủ của ghi chú, tạo bộ thông tin khôi phục và đề xuất nhờ bạn cùng lớp hoặc trợ giảng giải thích giúp khi thiếu bối cảnh. | _AI đề xuất / Nhờ người hỗ trợ_ | [`Prototype3/index.html`](Prototype3/index.html) |
 
-### 📊 Group Feedback Synthesis & Next Change
-Xem bản đầy đủ tại: [group-feedback-synthesis.md](group-feedback-synthesis.md)
+🔗 **Chi tiết tài liệu đi kèm trong thư mục:**
 
-- **100% 3/3 Tester lựa chọn Option B (Co-create Context Tags).**
-
-> **Một Next Change nhóm chốt:**  
-> Lựa chọn phát triển tiếp **Option B (Co-create Context Tags)** làm cơ chế tương tác chủ đạo, đồng thời tích hợp thêm tính năng **"Query On-Demand" của Option A** dưới dạng một lối tắt (shortcut) khi người dùng muốn tra cứu trực tiếp một từ khóa không nằm trong danh sách tag gợi ý.
-
-- **Still Unproven:** Chưa biết khi danh sách ghi chú kéo dài hàng trăm trang thì số lượng Draft Tags gợi ý của Option B có gây rối mắt hay không và liệu người dùng có duy trì thói quen duyệt tag lâu dài hay không.
+- Bảng thiết kế 3 phương án: [`three-option-design-sheet.md`](three-option-design-sheet.md)
+- Hướng dẫn chạy & Link Prototype: [`prototype-link.md`](prototype-link.md)
+- Bảng ghi chép phỏng vấn thử nghiệm: [`prototype-feedback-note.md`](prototype-feedback-note.md)
+- Tổng hợp phản hồi nhóm: [`group-feedback-synthesis.md`](group-feedback-synthesis.md)
+- Nhật ký hỗ trợ AI: [`ai-support-log.md`](ai-support-log.md)
 
 ---
 
-## 6. AI Support Log (Cá Nhân Thiều Thị Ngọc Ánh)
+## 4. Đóng góp của tôi trong nhóm
+- **Phụ trách thiết kế Option B (User + AI Co-Create):** Xây dựng cơ chế tạo bản nháp thẻ bối cảnh 3 dòng từ ghi chú và slide để người học xem lại, chỉnh sửa hoặc xác nhận trước khi lưu.
+- **Thống nhất Human–AI Decisions:** Đề xuất quy tắc buộc AI hiển thị trích dẫn nguồn rõ ràng (`Slide 14, phút 18:22`) và bổ sung các nút kiểm soát (`Review`, `Edit`, `Dismiss`) giúp học viên luôn nắm quyền quyết định cuối cùng.
+- **Facilitation & Observation (Phiên 2):** Trực tiếp đóng vai Facilitator thực hiện phiên phỏng vấn thử nghiệm prototype 20 phút với **Tester 2 (`2A202601818`)**, ghi nhận điểm tương tác và phản hồi của người dùng.
 
-Xem bản đầy đủ tại: [ai-support-log.md](ai-support-log.md)
+## 5. Prototype Feedback
 
-- **AI đã giúp gì:** Gợi ý cấu trúc HTML/CSS/JS cho bộ 3 micro-prototypes; hỗ trợ rà soát Distance Check giữa 3 cơ chế tương tác Human-AI.
-- **AI sai, hời hợt ở đâu:** AI định gộp cả 3 options vào 1 khung Chatbot ở góc phải (chỉ khác câu chữ) và vô tình giả định Option C tự động 100% luôn tốt nhất.
-- **Tôi đã tự sửa gì:** Bắt buộc AI tách thành 3 cơ chế giao diện riêng biệt; tự thêm nút Reset path; sửa lại câu hỏi Test Prompt sang dạng trung tính không dẫn dắt.
+### 👁️ Observation từ các phiên thử nghiệm:
+
+- **Phiên 1 (Đỗ Tú Anh test `2A202601870`):** Tester ưu tiên chọn Option B vì muốn có sẵn bản nháp tóm tắt kèm link trích dẫn nguồn rõ ràng để đỡ tốn công tự viết lại.
+- **Phiên 2 (Thiều Thị Ngọc Ánh test `2A202601818`):** Tester muốn kết hợp Option B và Option C để vừa được AI gợi ý bản nháp vừa giúp dọn dẹp các ghi chú lộn xộn.
+- **Phiên 3 (Trần Thanh Huyền test `2A202601290`):** Tester chọn Option A vì thích tốc độ tìm kiếm nhanh nhưng yêu cầu bắt buộc phải luôn hiện link mở slide gốc bên cạnh để tự kiểm tra lại khi cần.
+
+### 📊 Ba-Feedback Synthesis (Tổng hợp từ cả 3 phiên thử nghiệm của nhóm):
+
+1. **Phản hồi 3 phiên:**
+   - Phiên 1 (Đỗ Tú Anh test `2A202601870`): Chọn Option B vì cần bản nháp có sẵn trích dẫn nguồn rõ ràng.
+   - Phiên 2 (Thiều Thị Ngọc Ánh test `2A202601818`): Chọn Option B kết hợp C để dẹp bỏ ghi chú lộn xộn.
+   - Phiên 3 (Trần Thanh Huyền test `2A202601290`): Chọn Option A vì muốn tìm kiếm nhanh nhưng yêu cầu đính kèm link slide gốc.
+2. **Next Change nhóm chốt:**
+   > **Xây dựng giải pháp kết hợp (Hybrid Solution): Tự động tạo bản nháp bối cảnh kèm link bài giảng gốc (Option B), kết hợp ô tìm kiếm trích dẫn nhanh (Option A). Mọi nội dung do AI tạo ra đều phải qua bước người học kiểm tra và duyệt (Approve) trước khi lưu.**
+3. **Still Unproven (Điều chưa chứng minh được):**
+   > Chưa chứng minh được liệu giải pháp này có thực sự giúp học viên duy trì thói quen ôn bài đều đặn hàng tuần sau 1–3 tháng sử dụng thực tế hay không.
+
+---
+
+## 6. AI Support Log
+
+- **AI đã giúp gì:** AI hỗ trợ phác thảo giao diện HTML/CSS/JS cho 3 micro-prototypes độc lập, gợi ý chuẩn hóa kịch bản phỏng vấn 20 phút và giúp phân loại 3 hướng giải pháp theo phổ can thiệp của AI.
+- **AI sai / hời hợt ở đâu:** AI có xu hướng tự động hóa thái quá mà không hỏi ý kiến người dùng, tự đưa ra các khẳng định cảm tính thiếu bằng chứng như _"100% người học thích AI tự tóm tắt"_, và hoàn toàn bỏ qua nỗi lo AI giải thích sai (Hallucination) của học viên.
+- **Bạn tự sửa gì (Nhóm tự điều chỉnh gì):** Nhóm đã bổ sung quy định bắt buộc học viên phải kiểm tra và bấm duyệt (`Approve`) mới lưu ghi chú ở cả 3 option; buộc AI hiển thị trích dẫn nguồn bài giảng gốc (`Slide 14, phút 18:22`) kèm nhãn phân loại độ tin cậy (`Found / Inferred / Unknown`); đồng thời thay thế toàn bộ giả định cảm tính của AI bằng bằng chứng quan sát người dùng thực tế qua 3 phiên phỏng vấn.
+
+
+
+
+

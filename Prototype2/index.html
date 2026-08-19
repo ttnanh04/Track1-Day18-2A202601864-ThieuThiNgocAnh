@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VLearn AI Notes — Option B</title>
+  <!--
+    OPTION B
+    We expect the tester to: review, edit hoặc reject AI draft trước khi approve context card.
+    Watch for: tester có kiểm tra source và sửa phần AI đánh dấu chưa chắc chắn không.
+    Do not explain: trường nào nên sửa, đáp án đúng hoặc nút approve nên được dùng khi nào.
+  -->
+  <style>
+    :root{--ink:#172033;--muted:#667085;--line:#d9dfeb;--soft:#f5f7fb;--brand:#3559e8;--brand2:#edf1ff;--ok:#157347;--warn:#9a6700;--danger:#b42318;--white:#fff;--shadow:0 12px 32px rgba(25,39,80,.09)}
+    *{box-sizing:border-box} body{margin:0;background:#eef2f8;color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,textarea{font:inherit}button{cursor:pointer}.shell{max-width:1120px;margin:32px auto;padding:0 20px}.app{background:var(--white);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+    header{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;font-weight:800}.logo{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--brand);color:#fff}.option{font-size:13px;padding:6px 10px;border-radius:999px;background:var(--brand2);color:var(--brand);font-weight:700}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:14px 24px;background:#fbfcfe;border-bottom:1px solid var(--line)}.step{font-size:13px;color:var(--muted);padding:8px 10px;border-radius:9px;text-align:center}.step.active{background:var(--brand2);color:var(--brand);font-weight:750}
+    main{padding:28px}.screen{display:none}.screen.active{display:block}.eyebrow{color:var(--brand);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}h1{font-size:29px;line-height:1.18;margin:8px 0 10px}h2{font-size:21px;margin:0 0 8px}h3{font-size:15px;margin:0 0 8px}.lead{font-size:16px;color:var(--muted);max-width:760px;margin:0 0 22px}.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}.card{border:1px solid var(--line);border-radius:14px;padding:18px;background:#fff}.card.soft{background:var(--soft)}.label{font-size:12px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.05em}.note{font-size:18px;font-weight:750;margin:8px 0 0}.task{padding:14px 16px;border-left:4px solid var(--brand);background:var(--brand2);border-radius:8px;margin-top:12px}.fixture{margin:0;padding-left:20px;color:var(--muted)}.fixture li+li{margin-top:5px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{border:1px solid var(--line);border-radius:10px;padding:10px 15px;background:#fff;color:var(--ink);font-weight:750}.btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}.btn.ghost{background:transparent}.btn.danger{color:var(--danger)}.btn:focus-visible,textarea:focus-visible{outline:3px solid #aebcff;outline-offset:2px}.expect{display:flex;gap:10px;padding:13px 15px;border-radius:10px;background:#f0f4ff;color:#2946a8;margin:15px 0 18px}
+    .draft{border:1px solid var(--line);border-radius:14px;overflow:hidden}.drafthead{display:flex;justify-content:space-between;gap:12px;padding:14px 16px;background:var(--soft);border-bottom:1px solid var(--line)}.draftbody{padding:16px}.field{margin-bottom:16px}.field:last-child{margin-bottom:0}.fieldtop{display:flex;justify-content:space-between;gap:12px;margin-bottom:6px}.tag{font-size:12px;font-weight:750;padding:3px 7px;border-radius:999px;background:var(--brand2);color:var(--brand)}.tag.warn{background:#fff4d6;color:var(--warn)}textarea{width:100%;min-height:78px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;resize:vertical;background:#fff}.source{font-size:12px;color:var(--brand);font-weight:700;margin-top:5px}.message{min-height:24px;color:var(--danger);font-weight:650;margin-top:8px}.summary p{margin:6px 0 14px}.success{display:none;margin-top:14px;padding:12px 14px;border-radius:10px;background:#e9f7ef;color:var(--ok);font-weight:700}.success.show{display:block}.footerbar{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding:14px 24px;color:var(--muted);font-size:13px}
+    @media(max-width:760px){.grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.step{display:none}.step.active{display:block}main{padding:20px}.footerbar{align-items:flex-start;gap:10px;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="shell"><div class="app">
+    <header><div class="brand"><span class="logo">V</span> VLearn · AI Notes Lab</div><span class="option">OPTION B · USER + AI CO-CREATE</span></header>
+    <nav class="steps" aria-label="Tiến trình"><div class="step active" data-step="context">1 · Common context</div><div class="step" data-step="interaction">2 · Critical interaction</div><div class="step" data-step="result">3 · Result / decision</div></nav>
+    <main>
+      <section class="screen active" id="context">
+        <div class="eyebrow">Bối cảnh chung cho A/B/C</div><h1>Bạn cần dùng lại một note cũ để làm assignment</h1>
+        <p class="lead">Ba ngày sau bài học “Ghi nhớ hiệu quả”, bạn mở lại note dưới đây nhưng không còn nhớ đủ context. Hãy dùng prototype để hoàn thành cùng một task.</p>
+        <div class="grid">
+          <article class="card"><div class="label">Note cũ · 3 ngày trước</div><p class="note">“Active recall &gt; reread; lịch 1–3–7; feedback?”</p><div class="task"><strong>Assignment prompt</strong><br>Giải thích vì sao active recall hiệu quả hơn rereading và đề xuất một kế hoạch ôn trong 7 ngày.</div></article>
+          <article class="card soft"><div class="label">Dữ liệu có sẵn giống nhau ở cả ba option</div><ul class="fixture"><li>Slide 12 — Active recall và retrieval pathway</li><li>Slide 16 — Lịch ôn cách quãng ngày 1, 3, 7</li><li>Transcript 08:40 — Vai trò của feedback</li></ul><p><strong>Desired outcome:</strong> Viết được câu trả lời ngắn có căn cứ mà không đọc lại toàn bộ bài học.</p></article>
+        </div>
+        <div class="actions"><button class="btn primary" onclick="showScreen('interaction')">Bắt đầu: khôi phục context</button></div>
+      </section>
+
+      <section class="screen" id="interaction">
+        <div class="eyebrow">Critical interaction</div><h1>Review bản nháp context card</h1>
+        <div class="expect"><span>ⓘ</span><span><strong>AI sẽ làm:</strong> tạo bản nháp từ note và 3 source. <strong>Bạn cần:</strong> kiểm tra, sửa hoặc reject trước khi lưu. Phần AI không chắc được đánh dấu riêng.</span></div>
+        <div class="draft">
+          <div class="drafthead"><div><strong>Context card · AI draft</strong><br><span style="color:var(--muted)">Chưa được lưu vào note</span></div><span class="tag">3 nguồn được dùng</span></div>
+          <div class="draftbody">
+            <div class="field"><div class="fieldtop"><strong>Ý nghĩa chính</strong><span class="tag">AI đề xuất</span></div><textarea id="meaning">Active recall yêu cầu tự truy xuất thông tin từ trí nhớ, nhờ đó củng cố retrieval pathway. Rereading có thể tạo cảm giác quen thuộc nhưng không kiểm tra khả năng tự nhớ.</textarea><div class="source">Nguồn: Slide 12 · Mở lại trong bài học</div></div>
+            <div class="field"><div class="fieldtop"><strong>Kế hoạch áp dụng</strong><span class="tag">AI đề xuất</span></div><textarea id="plan">Ngày 1, 3 và 7: tự trả lời câu hỏi trước khi xem note; sau đó kiểm tra đáp án và sửa phần nhớ sai.</textarea><div class="source">Nguồn: Slide 16 + Transcript 08:40</div></div>
+            <div class="field"><div class="fieldtop"><strong>Điều cần kiểm tra</strong><span class="tag warn">Chưa chắc chắn</span></div><textarea id="uncertain">Lịch 1–3–7 là ví dụ khởi đầu, không phải quy tắc cố định cho mọi nội dung. Hãy xác nhận cách điều chỉnh khi câu trả lời vẫn sai.</textarea><div class="source">AI suy luận từ phần “tăng khoảng cách khi câu trả lời đã ổn định” · Cần user review</div></div>
+          </div>
+        </div>
+        <div class="message" id="draftMessage"></div>
+        <div class="actions"><button class="btn" onclick="rejectDraft()">Reject draft</button><button class="btn primary" onclick="approveDraft()">Approve và dùng card</button><button class="btn ghost danger" onclick="resetPrototype()">Stop & reset</button></div>
+      </section>
+
+      <section class="screen" id="result">
+        <div class="eyebrow">Result / user decision</div><h1>Context card chỉ được lưu sau quyết định của bạn</h1>
+        <div class="grid"><article class="card soft summary"><h2>Card đã approve</h2><strong>Ý nghĩa chính</strong><p id="savedMeaning"></p><strong>Kế hoạch áp dụng</strong><p id="savedPlan"></p><strong>Điều đã kiểm tra</strong><p id="savedUncertain"></p></article><article class="card"><label for="answer"><strong>Câu trả lời assignment</strong></label><textarea id="answer" style="min-height:150px" placeholder="Dùng context card để viết 2–4 câu..."></textarea></article></div>
+        <div class="actions"><button class="btn" onclick="showScreen('interaction')">Edit card</button><button class="btn primary" onclick="finishTask()">Dùng card này</button><button class="btn ghost danger" onclick="resetPrototype()">Revert về note cũ & reset</button></div>
+        <div class="success" id="success">Đã ghi nhận quyết định dùng card. Bạn vẫn có thể edit, revert hoặc reset.</div>
+      </section>
+    </main>
+    <div class="footerbar"><span>Fixture thử nghiệm · AI output được canned sẵn</span><button class="btn ghost" onclick="resetPrototype()">↺ Reset về common context</button></div>
+  </div></div>
+  <script>
+    const defaults={meaning:'Active recall yêu cầu tự truy xuất thông tin từ trí nhớ, nhờ đó củng cố retrieval pathway. Rereading có thể tạo cảm giác quen thuộc nhưng không kiểm tra khả năng tự nhớ.',plan:'Ngày 1, 3 và 7: tự trả lời câu hỏi trước khi xem note; sau đó kiểm tra đáp án và sửa phần nhớ sai.',uncertain:'Lịch 1–3–7 là ví dụ khởi đầu, không phải quy tắc cố định cho mọi nội dung. Hãy xác nhận cách điều chỉnh khi câu trả lời vẫn sai.'};
+    function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('.step').forEach(s=>s.classList.toggle('active',s.dataset.step===id));window.scrollTo({top:0,behavior:'smooth'})}
+    function rejectDraft(){document.getElementById('meaning').value='';document.getElementById('plan').value='';document.getElementById('uncertain').value='';document.getElementById('draftMessage').textContent='Draft đã bị reject. Bạn có thể tự nhập context hoặc reset về note cũ.'}
+    function approveDraft(){const ids=['meaning','plan','uncertain'];if(ids.some(id=>!document.getElementById(id).value.trim())){document.getElementById('draftMessage').textContent='Card còn trường trống. Hãy bổ sung hoặc reset nếu không muốn tiếp tục.';return}document.getElementById('savedMeaning').textContent=document.getElementById('meaning').value;document.getElementById('savedPlan').textContent=document.getElementById('plan').value;document.getElementById('savedUncertain').textContent=document.getElementById('uncertain').value;document.getElementById('draftMessage').textContent='';showScreen('result')}
+    function finishTask(){document.getElementById('success').classList.add('show')}
+    function resetPrototype(){Object.entries(defaults).forEach(([id,value])=>document.getElementById(id).value=value);document.getElementById('answer').value='';document.getElementById('draftMessage').textContent='';document.getElementById('success').classList.remove('show');showScreen('context')}
+    function runQa(){try{showScreen('interaction');document.getElementById('meaning').value='QA edit';approveDraft();if(!document.getElementById('result').classList.contains('active')||document.getElementById('savedMeaning').textContent!=='QA edit')throw new Error('approve transition');resetPrototype();if(!document.getElementById('context').classList.contains('active')||document.getElementById('meaning').value!==defaults.meaning)throw new Error('reset path');document.body.dataset.qa='pass'}catch(error){document.body.dataset.qa='fail-'+error.message}}
+    document.body.dataset.ready='true';if(location.href.includes('qa=1'))runQa()
+  </script>
+</body>
+</html>
